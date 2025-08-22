@@ -12,6 +12,6 @@
       ]
     }
   },
-  "postCreateCommand": "./post-create.sh",
+  "postCreateCommand": "env",
   "remoteUser": "devpod"
 }
