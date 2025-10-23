@@ -3,6 +3,21 @@ kind: Pod
 metadata:
   name: devpod
 spec:
+  initContainers:
+  - name: devpod-init
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: false
+      privileged: false
+      runAsNonRoot: false
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      capabilities:
+        drop:
+          - ALL
+      seccompProfile:
+        type: RuntimeDefault
   containers:
   - name: devpod
     securityContext:
